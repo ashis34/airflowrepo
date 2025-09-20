@@ -32,7 +32,7 @@ with DAG(
 ) as dag: 
     task1=BashOperator(
         task_id='first_task',
-        bash_command="echo Hello first task"
+        bash_command="echo Hello first task; echo New code"
     )
 
     task1

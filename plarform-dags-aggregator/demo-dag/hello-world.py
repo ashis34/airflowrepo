@@ -14,7 +14,7 @@ with DAG(
     default_args=default_args,
     description='A Hello World DAG that runs only when triggered manually',
     schedule_interval=None,      # <- No automatic schedule
-    start_date=datetime(2023, 1, 1),
+    start_date=datetime(2025, 1, 1),
     catchup=False,               # <- Don't backfill
     tags=['example'],
 ) as dag:

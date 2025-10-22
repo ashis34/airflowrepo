@@ -21,7 +21,8 @@ from airflow.sdk import dag, get_current_context, task
         }
     ),
     render_template_as_native_obj=True,
-    access_control={"role_amrutha0821": {"DAGs": {"can_read", "can_edit"}}},
+    #access_control={"role_amrutha0821": {"DAGs": {"can_read", "can_edit"}}},
+    access_control={"role_amrutha0821": {"DAGs": {"can_read", "can_edit"}},"role_ashis123": {"DAGs": {"can_read"}}},
 )
 def example_retrying_task():
 

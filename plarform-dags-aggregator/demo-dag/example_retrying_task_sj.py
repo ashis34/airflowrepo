@@ -56,4 +56,4 @@ def example_retrying_task_again():
     product(values=_added)
 
 
-example_retrying_task()
+example_retrying_task_again()

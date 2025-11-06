@@ -11,7 +11,7 @@ import time
 args = {
     'owner': 'airflow',
     #'start_date': days_ago(2),
-    start_date": datetime(2022, 1, 1),
+    "start_date": datetime(2022, 1, 1),
 }
 
 with DAG(

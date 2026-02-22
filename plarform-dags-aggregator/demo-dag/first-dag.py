@@ -27,7 +27,7 @@ with DAG(
                 'can_read',
                 'can_delete'
             }},
-        'role_test': {
+        'role_ashis-pattjoshi': {
             'can_read',
             'can_edit',
             'can_delete'

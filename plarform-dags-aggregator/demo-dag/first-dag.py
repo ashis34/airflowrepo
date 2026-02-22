@@ -20,7 +20,8 @@ with DAG(
     access_control={
         'role_ashis123': {
             'can_read',
-            'can_delete'
+            'can_delete',
+            'can_edit'
         },
         'role_test': {
             'can_read',

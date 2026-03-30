@@ -20,13 +20,10 @@ with DAG(
     access_control={
         'role_ashis123': {
            'DAG Runs': {
-                'can_read',
-                'can_delete'
+                'can_read'
            },
            'DAGs': {
-                'can_read',
-                'can_delete',
-                'can_edit'
+                'can_read'
             }},
         'role_ashis-pattjoshi': {
             'can_read',

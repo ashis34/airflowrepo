@@ -17,6 +17,23 @@ with DAG(
     start_date=datetime(2025, 1, 1),
     catchup=False,               # <- Don't backfill
     tags=['example'],
+        access_control={
+        'role_ashis123': {
+           'DAG Runs': {
+                'can_read',
+                'can_delete'
+           },
+           'DAGs': {
+                'can_read',
+               'can_delete'
+               
+            }},
+        'role_ashis-pattjoshi': {
+            'can_read',
+            'can_edit',
+            'can_delete'
+        }
+}
 ) as dag:
 
     hello_task = PythonOperator(

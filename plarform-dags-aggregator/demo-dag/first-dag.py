@@ -18,7 +18,7 @@ with DAG(
     catchup=False,  # IMPORTANT: Prevents backfill of past periods
     #start_date=datetime(2023, 9, 12, 2),
     start_date= datetime.now(),
-    schedule_interval='*/15 * * * *'
+    schedule_interval='*/15 * * * *',
     access_control={
         'role_ashis123': {
            'DAG Runs': {

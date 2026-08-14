@@ -14,9 +14,11 @@ with DAG(
     default_args=default_args,
     description='This is our first dag',
     #start_date= days_ago(2),
-    schedule=None,
+    #schedule=None,
+    catchup=False,  # IMPORTANT: Prevents backfill of past periods
     #start_date=datetime(2023, 9, 12, 2),
-    #schedule_interval='@daily'
+    start_date= datetime.now(),
+    schedule_interval='*/15 * * * *'
     access_control={
         'role_ashis123': {
            'DAG Runs': {

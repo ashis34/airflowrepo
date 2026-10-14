@@ -34,6 +34,9 @@ with DAG(
             'can_edit',
             'can_delete'
         }
+         'role_amrutha0821': {
+            'can_read'
+        }
 }
 ) as dag:
 

@@ -1,0 +1,47 @@
+from datetime import datetime, timedelta
+from airflow import DAG
+from airflow.operators.bash import BashOperator
+#from airflow.utils.dates import days_ago
+
+default_args = {
+    'owner': 'airflow',
+    'retries': 5,
+    'retry_delay': timedelta(minutes=2)
+}
+
+with DAG(
+    dag_id='test_rbac',
+    default_args=default_args,
+    description='This is our first dag',
+    #start_date= days_ago(2),
+    #schedule=None,
+    catchup=False,  # IMPORTANT: Prevents backfill of past periods
+    #start_date=datetime(2023, 9, 12, 2),
+    start_date= datetime.now(),
+    schedule='0 * * * *',
+    #schedule_interval='*/15 * * * *',
+    access_control={
+        'role_ashis123': {
+           'DAG Runs': {
+                'can_read',
+                'can_delete'
+           },
+           'DAGs': {
+                'can_read',
+                'can_edit',
+                'can_delete'
+               
+            }},
+        'role_ashis-pattjoshi': {
+            'can_read',
+            'can_edit',
+            'can_delete'
+        }
+}
+) as dag: 
+    task1=BashOperator(
+        task_id='first_task',
+        bash_command="echo Hello first task; echo New code"
+    )
+
+    task1

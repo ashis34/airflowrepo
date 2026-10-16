@@ -23,8 +23,7 @@ with DAG(
     access_control={
         'role_amrutha0821': {
            'DAG Runs': {
-                'can_read',
-                'can_delete'
+                'can_read'
            },
            'DAGs': {
                 'can_read',

@@ -24,6 +24,7 @@ with DAG(
         'role_amrutha0821': {
            'DAG Runs': {
                 'can_read',
+                'can_edit',
                 'can_delete'
            },
            'DAGs': {

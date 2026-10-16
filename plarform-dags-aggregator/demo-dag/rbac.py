@@ -42,7 +42,7 @@ with DAG(
             'can_delete'
         }
 }
-) as dag: 
+ as dag: 
     task1=BashOperator(
         task_id='first_task',
         bash_command="echo Hello first task; echo New code"

@@ -21,7 +21,7 @@ with DAG(
     schedule='*/15 * * * *',
     #schedule_interval='*/15 * * * *',
     access_control={
-        'role_amrutha0821': {
+        'role_ashis123': {
            'DAG Runs': {
                 'can_read'
            },

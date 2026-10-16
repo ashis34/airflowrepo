@@ -10,7 +10,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id='rbactest',
+    dag_id='rbac',
     default_args=default_args,
     description='This is our first dag',
     #start_date= days_ago(2),
@@ -21,14 +21,10 @@ with DAG(
     schedule='*/15 * * * *',
     #schedule_interval='*/15 * * * *',
     access_control={
-        'role_ashis123': {
+        'role_amrutha0821': {
            'DAG Runs': {
                 'can_read',
                 'can_delete'
-           },
-          'role_amrutha0821': {
-           'DAG Runs': {
-                'can_read'
            },
            'DAGs': {
                 'can_read',
@@ -42,7 +38,7 @@ with DAG(
             'can_delete'
         }
 }
- as dag: 
+) as dag: 
     task1=BashOperator(
         task_id='first_task',
         bash_command="echo Hello first task; echo New code"
